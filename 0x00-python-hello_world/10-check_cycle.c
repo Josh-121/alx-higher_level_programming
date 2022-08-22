@@ -8,7 +8,7 @@ int check_cycle(listint_t *list)
  int num=0;
 
  ptr = list;
- check==list;
+ check=list;
  while (ptr != NULL)
  {
     i++;
