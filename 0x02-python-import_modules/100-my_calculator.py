@@ -1,26 +1,24 @@
 #!/usr/bin/python3
-def simple_cal(sys, cal):
-    count = len(sys.argv)
-    if (count != 4):
-        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        sys.exit(1)
-    a = int(sys.argv[1])
-    b = int(sys.argv[3])
-    operator = sys.argv[2]
-    if (operator == '+'):
-        print("{0:d} + {1:d} = {2:d}".format(a, b, cal.add(a, b)))
-    elif (operator == '-'):
-        print("{0:d} - {1:d} = {2:d}".format(a, b, cal.sub(a, b)))
-    elif (operator == '*'):
-        print("{0:d} * {1:d} = {2:d}".format(a, b, cal.mul(a, b)))
-    elif (operator == '/'):
-        print("{0:d} / {1:d} = {2:d}".format(a, b, cal.div(a, b)))
-    else:
-        print("Unknown operator. Available operators: +, -, * and /")
-        sys.exit(1)
-
-
 if __name__ == "__main__":
     import sys
-    import calculator_1 as cal
-    simple_cal(sys, cal)
+    from calculator_1 import add, sub, mul, div
+    argc = len(sys.argv)
+    for str in range(argc):
+        if (argc != 4):
+            print("Usage: {:s} <a> <operator> <b>".format(sys.argv[str]))
+            exit(1)
+        else:
+            a = int(sys.argv[1])
+            b = int(sys.argv[3])
+            if (sys.argv[2] == '+'):
+                print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
+            elif (sys.argv[2] == '-'):
+                print("{:d} - {:d} = {:d}".format(a, b, sub(a, b)))
+            elif (sys.argv[2] == '*'):
+                print("{:d} * {:d} = {:d}".format(a, b, mul(a, b)))
+            elif (sys.argv[2] == '/'):
+                print("{:d} / {:d} = {:d}".format(a, b, div(a, b)))
+            else:
+                print("Unknown operator. Available operators: +, -, * and /")
+                exit(1)
+            exit(0)
