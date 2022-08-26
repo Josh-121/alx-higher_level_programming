@@ -1,14 +1,17 @@
 #!/usr/bin/python3
+def print_args(argv):
+    length = len(argv)
+    if (length == 1):
+        print("{0:d} arguments.".format(length - 1))
+    elif (length > 1):
+        if (length - 1 == 1):
+            print("{0:d} argument:".format(length - 1))
+        elif (length > 1):
+            print("{0:d} arguments:".format(length - 1))
+        for i in range(length - 1):
+            print("{0:d}: {1:s}".format(i + 1, argv[i + 1]))
+
+
 if __name__ == "__main__":
     import sys
-    nargs = len(sys.argv) - 1
-    if (nargs == 0):
-        print("{:d} arguments.".format(nargs))
-    elif (nargs == 1):
-        print("{:d} argument:".format(nargs))
-    else:
-        print("{:d} arguments:".format(nargs))
-    for str in range(len(sys.argv)):
-        if (str == 0):
-            continue
-        print("{:d}: {:s}".format(str, sys.argv[str]))
+    print_args(sys.argv)
