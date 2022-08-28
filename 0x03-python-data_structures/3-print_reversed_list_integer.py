@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+#!/usr/bin/python3
+
 def print_reversed_list_integer(my_list=[]):
-    for i in reversed(range(len(my_list))):
-        print("{:d}".format(i))
+    if my_list:
+        mod_list = []
+        for m in range(1, len(my_list) + 1):
+            mod_list.append(my_list[-m])
+        for n in mod_list:
+            print("{:d}".format(n))
