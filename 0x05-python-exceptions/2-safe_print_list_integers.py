@@ -1,15 +1,17 @@
 #!/usr/bin/python3
+"""
+a function that prints the first x
+elements of a list and only integers
+"""
+
+
 def safe_print_list_integers(my_list=[], x=0):
-    index = 0
-    notInt = 0
-    try:
-        while index < x:
-            if type(my_list[index]) == int:
-                print("{:d}".format(my_list[index]), end="")
-            else:
-                notInt += 1
-            index += 1
-        print()
-    except IndexError:
-        print()
-    return (index - notInt)
+    n = 0
+    for i in range(0, x):
+        try:
+            print("{:d}".format(my_list[i]), end="")
+            n += 1
+        except (ValueError, TypeError):
+            continue
+    print("")
+    return (n)
