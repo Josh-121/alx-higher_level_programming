@@ -1,6 +1,17 @@
 #!/usr/bin/python3
+"""
+The class constructor initializing the private property: __size
+"""
+
+
 class Square:
+    """
+    The class constructor initializing the private property: __size
+    """
     def __init__(self, size=0):
+        """
+        The class constructor initializing the private property: __size
+        """
         if type(size) != int:
             raise TypeError("size must be an integer")
         elif size < 0:
@@ -9,14 +20,23 @@ class Square:
             self.__size = size
 
     def area(self):
+        """
+        The class constructor initializing the private property: __size
+        """
         return (self.__size ** 2)
 
     @property
     def size(self):
+        """
+        The class constructor initializing the private property: __size
+        """
         return (self.__size)
 
     @size.setter
     def size(self, value):
+        """
+        The class constructor initializing the private property: __size
+        """
         if type(value) != int:
             raise TypeError("size must be an integer")
         elif value < 0:
