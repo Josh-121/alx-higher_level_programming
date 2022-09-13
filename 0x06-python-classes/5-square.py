@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-The class constructor initializing the private property: __size
+contains the square class
 """
 
 
 class Square:
     """
-    The class constructor initializing the private property: __size
+    contains constructor,area method,getter,setter and my_print method
     """
     def __init__(self, size=0):
         """
@@ -21,21 +21,21 @@ class Square:
 
     def area(self):
         """
-        The class constructor initializing the private property: __size
+        calculates and returns the area
         """
         return (self.__size ** 2)
 
     @property
     def size(self):
         """
-        The class constructor initializing the private property: __size
+        gets the size attribute
         """
         return (self.__size)
 
     @size.setter
     def size(self, value):
         """
-        The class constructor initializing the private property: __size
+        sets the size attribute
         """
         if type(value) != int:
             raise TypeError("size must be an integer")
@@ -46,7 +46,7 @@ class Square:
 
     def my_print(self):
         """
-        The class constructor initializing the private property: __size
+        prints visual image of the specified square
         """
         count = 0
         while True:

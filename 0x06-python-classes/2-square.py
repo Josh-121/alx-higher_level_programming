@@ -11,6 +11,7 @@ class Square:
     def __init__(self, size=0):
         """
         The class constructor initializing the private property: __size
+        and handling input errors
         """
         if type(size) != int:
             raise TypeError("size must be an integer")
