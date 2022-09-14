@@ -4,6 +4,9 @@ The class constructor initializing the private property: __size
 """
 
 
+import string
+
+
 class Node:
     """
     The class constructor initializing the private property: __size
@@ -86,3 +89,12 @@ class SinglyLinkedList:
             else:
                 node.next_node = temp.next_node
                 temp.next_node = node
+
+    def __str__(self) -> str:
+        out = ""
+        runner = self.__head
+        while runner is not None:
+            out += (str(runner.data) + "\n")
+            runner = runner.next_node
+        out = out[:-1]
+        return out
