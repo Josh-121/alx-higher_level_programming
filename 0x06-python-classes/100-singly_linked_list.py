@@ -71,13 +71,18 @@ class SinglyLinkedList:
         The class constructor initializing the private property: __size
         """
         if self.__head is None:
-            self.__head = Node(self.value, None)
-        node = Node(self.value, None)
-        while self.__head.next_node is not None:
-            if self.__head.data <= node.data:
-                node.next_node = self.__head.next_node
-                self.__head.next_node = node
-            self.__head = self.__head.next_node
-        if self.__head.next_node is None:
-            node.next_node = self.__head.next_node
-            self.__head.next_node = node
+            self.__head = Node(value, None)
+        else:
+            node = Node(value, None)
+            runner = self.__head
+            temp = None
+            while runner is not None:
+                if node.data >= runner.data:
+                    temp = runner
+                runner = runner.next_node
+            if temp is None:
+                node.next_node = self.__head
+                self.__head = node
+            else:
+                node.next_node = temp.next_node
+                temp.next_node = node
