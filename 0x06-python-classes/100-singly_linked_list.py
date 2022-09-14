@@ -4,9 +4,6 @@ The class constructor initializing the private property: __size
 """
 
 
-import string
-
-
 class Node:
     """
     The class constructor initializing the private property: __size
