@@ -1,16 +1,17 @@
 #!/usr/bin/python3
 """
-The class constructor initializing the private property: __size
+Contains the Node and SinglyLinked class
 """
 
 
 class Node:
     """
-    The class constructor initializing the private property: __size
+    contains a constructor,properties getters and setters
     """
     def __init__(self, data, next_node=None):
         """
-        The class constructor initializing the private property: __size
+        Initializes input data and next Node and handles
+        input errors
         """
         if type(data) != int:
             raise TypeError("data must be an integer")
@@ -24,14 +25,14 @@ class Node:
     @property
     def data(self):
         """
-        The class constructor initializing the private property: __size
+        gets the __data attribute
         """
         return self.__data
 
     @data.setter
     def data(self, value):
         """
-        The class constructor initializing the private property: __size
+        sets the __data attribute
         """
         if type(value) != int:
             raise TypeError("data must be an integer")
@@ -41,14 +42,14 @@ class Node:
     @property
     def next_node(self):
         """
-        The class constructor initializing the private property: __size
+        gets the __next_node attribute
         """
         return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
         """
-        The class constructor initializing the private property: __size
+        sets the __next_node attribute
         """
         if type(value) != Node and value is not None:
             raise TypeError("next_node must be a Node object")
@@ -58,17 +59,18 @@ class Node:
 
 class SinglyLinkedList:
     """
-    The class constructor initializing the private property: __size
+    Contains the class constructor,sorted_insert method and the 
+    __str__ method
     """
     def __init__(self):
         """
-        The class constructor initializing the private property: __size
+        initializing head
         """
         self.__head = None
 
     def sorted_insert(self, value):
         """
-        The class constructor initializing the private property: __size
+        inserts data in the list due to it's sorted position.
         """
         if self.__head is None:
             self.__head = Node(value, None)
@@ -89,7 +91,7 @@ class SinglyLinkedList:
 
     def __str__(self) -> str:
         """
-        The class constructor initializing the private property: __size
+        returns the linked list in str format
         """
         out = ""
         runner = self.__head
