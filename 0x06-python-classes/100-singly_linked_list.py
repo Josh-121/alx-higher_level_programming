@@ -91,6 +91,9 @@ class SinglyLinkedList:
                 temp.next_node = node
 
     def __str__(self) -> str:
+        """
+        The class constructor initializing the private property: __size
+        """
         out = ""
         runner = self.__head
         while runner is not None:
