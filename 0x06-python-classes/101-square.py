@@ -100,4 +100,5 @@ class Square:
             for z in range(self.__size):
                 self.squareStr += "#"
             self.squareStr += "\n"
+        self.squareStr = self.squareStr[:-1]
         return self.squareStr
