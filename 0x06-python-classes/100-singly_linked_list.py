@@ -59,7 +59,7 @@ class Node:
 
 class SinglyLinkedList:
     """
-    Contains the class constructor,sorted_insert method and the 
+    Contains the class constructor,sorted_insert method and the
     __str__ method
     """
     def __init__(self):
