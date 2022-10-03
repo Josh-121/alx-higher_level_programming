@@ -75,9 +75,13 @@ class Base:
         returns a list of class objects gotten a json file
         containing their respective dict representations
         """
-        name = f"{str(cls.__name__)}.json"
-        with open(name, 'r') as file:
-            out = file.read()
-        out = cls.from_json_string(out)
-        instance_list = [cls.create(**i) for i in out]
-        return instance_list
+        try:
+            name = f"{str(cls.__name__)}.json"
+            with open(name, 'r') as file:
+                out = file.read()
+            out = cls.from_json_string(out)
+            instance_list = [cls.create(**i) for i in out]
+            return instance_list
+        except FileNotFoundError:
+            instance_list = []
+            return instance_list
