@@ -50,9 +50,12 @@ class Base:
         converts list of custom objects dictionary representation(gotten from
         input custom object list) to json string and saves it in a json file
         """
-        new_list = [i.to_dictionary() for i in list_objs]
-        name = f"{str(cls.__name__)}.json"
-        out = cls.to_json_string(new_list)
+        if list_objs is not None:
+            new_list = [i.to_dictionary() for i in list_objs]
+            name = f"{str(cls.__name__)}.json"
+            out = cls.to_json_string(new_list)
+        else:
+            out = '[]'
         with open(name, 'w') as file:
             file.write(out)
 
