@@ -77,6 +77,7 @@ class Base:
         """
         name = f"{str(cls.__name__)}.json"
         with open(name, 'r') as file:
-            out = json.load(file)
+            out = json.loads(file)
+        out = cls.from_json_string(out)
         instance_list = [cls.create(**i) for i in out]
         return instance_list
